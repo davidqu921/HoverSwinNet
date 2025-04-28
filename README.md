@@ -262,6 +262,9 @@ BibTex entry: <br />
 * [Quoc Dang Vu](https://github.com/vqdang)
 * [Simon Graham](https://github.com/simongraham)
 
+## Improved by
+* David Qu
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
