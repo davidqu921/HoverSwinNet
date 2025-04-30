@@ -998,8 +998,8 @@ class HoverIT(nn.Module):
         if self.mode == 'fast' :
             u0 = center_crop(u0, target_size=(164, 164))  # 调整为 B×C×164×164
             # print("--Shape of u0 after croped:", u0.shape)
-
-
+        
+        out_dict = OrderedDict()
         np_out = self.np_branch(u0)
         hv_out = self.hv_branch(u0)
         tp_out = self.tp_branch(u0)
@@ -1007,11 +1007,12 @@ class HoverIT(nn.Module):
         # print("--Shape of np_out:", np_out.shape)
         # print("--Shape of hv_out:", hv_out.shape)
         # print("--Shape of tp_out:", tp_out.shape)
+        
+        out_dict["tp"] = tp_out
+        out_dict["np"] = np_out
+        out_dict["hv"] = hv_out
 
-        return {
-            "np": np_out,
-            "hv": hv_out,
-            "tp": tp_out
+        return out_dict
         }
 
 ####
