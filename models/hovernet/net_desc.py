@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 import itertools
+from collections import OrderedDict
 from collections.abc import Sequence
 from typing_extensions import Final
 from torch.nn import LayerNorm
@@ -1013,7 +1014,7 @@ class HoverIT(nn.Module):
         out_dict["hv"] = hv_out
 
         return out_dict
-        }
+        
 
 ####
 def create_model(input_ch=3, nr_types=None, freeze=False, mode=None, **kwargs):
